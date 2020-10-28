@@ -1,0 +1,35 @@
+  
+            Development Process - Initiated at [ Wednesday 28th October 2020 ]
+
+----------------------------------------------------------------------------------------------------
+                                           Web App 
+----------------------------------------------------------------------------------------------------
+Initiated at :- [ Wednesday 28th October 2020 ]    
+                                                     Completed at :- [ ]  
+----------------------------------------------------------------------------------------------------
+                    
+1. Make a Class that supports basic calculation using console only 
+                                                  -- Completed at :- [ Wednesday 28th October 2020 ]
+2. Implement input functionality from DOM only and perform calculation 
+                                                  -- Incomplete
+3. Implement Buttons and Design In DOM
+                                                  -- Incomplete
+4. Implement Alert and Error PopUp on DOM
+                                                  -- Incomplete
+5. Create Application Environments for Different Modes Like [Production and Development]
+                                                  -- Incomplete
+6. Implement PWA as Well
+                                                  -- Incomplete
+7. Make Chrome Extension as Well
+                                                  -- Incomplete
+8. Make Extension for Other Platform as Well
+                                                  -- Incomplete
+
+----------------------------------------------------------------------------------------------------
+                                           Mobile App 
+----------------------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------------------
+                                           Desktop App 
+----------------------------------------------------------------------------------------------------
