@@ -11,7 +11,7 @@ Initiated at :- [ Wednesday 28th October 2020 ]
 1. Make a Class that supports basic calculation using console only 
                                                   -- Completed at :- [ Wednesday 28th October 2020 ]
 2. Implement input functionality from DOM only and perform calculation 
-                                                  -- Incomplete
+                                                  -- Completed at :- [ Friday 30th October 2020 ]
 3. Implement Buttons and Design In DOM
                                                   -- Incomplete
 4. Implement Alert and Error PopUp on DOM
