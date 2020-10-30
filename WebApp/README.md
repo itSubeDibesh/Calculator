@@ -24,3 +24,6 @@ This is one of my __Quest Project__ where I try to explore **JS** and make a mul
 </pre>
 
 
+## Releases
+1. __[Calculator Web App P2 [v1.0-beta.1]](https://github.com/itSubeDibesh/Calculator/releases/tag/v1.0-beta.1)__
+This version of Calculator Web App v1.0-beta.1 only includes basic functions like [Addition +, Subtraction -, Multiplication *, Division / and Modulus % ] operation. Moreover, the result div shows the invalid error and results after calculation and hides when no operation is carried out.
