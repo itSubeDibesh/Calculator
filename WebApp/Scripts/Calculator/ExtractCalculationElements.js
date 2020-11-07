@@ -1,5 +1,5 @@
 /**
- * ExtractElements Class @version 1.0
+ * ExtractCalculationElements Class @version 1.0
  * 
  * Made with ❤️ By Dibesh Raj Subedi(https://github.com/itSubeDibesh)
  * 
@@ -13,7 +13,7 @@
  * @function postOperand(inputString) 
  */
 
-export class ExtractElements {
+export class ExtractCalculationElements {
     /**
      * Gets All Operation Elements
      * @param {String} inputString
@@ -73,6 +73,6 @@ export class ExtractElements {
      * Distinguished operators String
      */
     operators() {
-        return `+-*/%`;
+        return `+-X/%`;
     }
 }

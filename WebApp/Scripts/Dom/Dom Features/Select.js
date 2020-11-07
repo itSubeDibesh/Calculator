@@ -23,7 +23,7 @@ export class Select extends Debug {
      */
     check = {
         class: (el) => (document.getElementsByClassName(el)[0].attributes[0].name === 'class'),
-        id: (el) => (document.getElementById(el).attributes[1].name === 'id'),
+        id: (el) => ( document.getElementById(el).attributes.id.name === 'id'),
         name: (el) => (document.getElementsByName(el)[0].attributes[2].name === 'name'),
         tag: (el) => (Boolean(document.getElementsByTagName(el)[0].localName === el))
     }
@@ -99,7 +99,7 @@ export class Select extends Debug {
             this.selectedElements.push(selectorType);
             return selectorType;
         }
-
+     
         /**
          * Switching Between Element Types and returning Selected Element
          */

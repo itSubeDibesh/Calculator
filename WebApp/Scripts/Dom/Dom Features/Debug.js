@@ -119,6 +119,12 @@ export class Debug {
     log = this.debugType.log;
 
     /**
+     * Setting the Clear 
+     * @returns {Function} Console.clear()
+     */
+    clear = this.debugType.clear;
+
+    /**
      * Setting the Warn 
      * @returns {Function} Console.warn(args)
      */
@@ -141,4 +147,10 @@ export class Debug {
     * @returns {Function} alert(args)
     */
     alert = this.debugType.alert;
+
+    /**
+     * Setting the trace 
+     * @returns {Function} Console.trace(args)
+     */
+    trace = this.debugType.trace;
 }

@@ -11,6 +11,7 @@ This file includes all the infromation related to [**Calculator Web App**](https
 This is one of my __Quest Project__ where I try to explore **JS** and make a multiple platform application using **JS** only and [**Calculator Web App**](https://github.com/itSubeDibesh/Calculator/tree/main/WebApp) is a part of  [**Calculator Project**](https://github.com/itSubeDibesh/Calculator). This documentation only includes information related to [**Web Version**](https://github.com/itSubeDibesh/Calculator/tree/main/WebApp) only.
 
 ## Folder Structure
+Folder Structure for [Calculator Web App](https://github.com/itSubeDibesh/Calculator/tree/main/WebApp).
 <pre>
 |----> WebApp
 |       |
@@ -21,6 +22,8 @@ This is one of my __Quest Project__ where I try to explore **JS** and make a mul
 |       |---->  Scripts
 |       |       |---> Calculator
 |       |       |---> Dom
+|       |               |---> Dom Features
+|       |               |---> Dom Elements
 </pre>
 
 

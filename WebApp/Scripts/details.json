@@ -10,30 +10,43 @@
 				"Calculator": {
 					"BasicCalculation.js": {
 						"Version": 1.0,
-						"Dependency": [
-							"ExtractElements.js",
-							"Debug.js",
-							"Inherit.js"
-						]
+						"Dependency": [ "ExtractElements.js", "Debug.js", "Inherit.js" ]
 					},
 					"ExtractElements.js": {
 						"Version": 1.0
 					}
-                },
-                "Dom":{
-					"DOM.js":{
+				},
+				"Dom": {
+					"DOM.js": {
 						"Version": 1.0,
-						"Dependency": "Select.js"
+						"Dependency": [ "Select.js", "Debug.js", "Inherit.js" ]
 					},
-					"Debug.js":{
-						"Version": 1.0
+					"Dom Features": {
+						"Debug.js": {
+							"Version": 1.0
+						},
+						"Select.js": {
+							"Version": 1.0,
+							"Dependency": "Debug.js"
+						},
+						"Inherit.js": {
+							"Version": 1.0
+						}
 					},
-					"Select.js":{
-						"Version": 1.0,
-						"Dependency": "Debug.js"
-					},
-					"Inherit.js":{
-						"Version": 1.0
+					"Dom Elements": {
+						"DomElements.js": {
+							"Version": 1.0
+						},
+						"Elements Features": {
+							"ClassFeature": {
+								"Version": 1.0
+							}
+						},
+						"Elements": {
+							"Button.js": {
+								"Version": 1.0
+							}
+						}
 					}
 				}
 			}

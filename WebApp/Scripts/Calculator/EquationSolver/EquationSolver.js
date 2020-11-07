@@ -1,9 +1,7 @@
-import { DOM } from '../Dom/Dom.js';
-import { Inherit } from '../Dom/Inherit.js';
-import { ExtractElements } from './ExtractElements.js';
-
+import { DOM, Inherit } from '../../Dom/Dom.js';
+import { ExtractCalculationElements } from '../ExtractCalculationElements.js';
 /**
- * BasicCalculation Class @version 1.0
+ * EquationSolver Class @version 1.0
  *  
  * Made with ❤️ By Dibesh Raj Subedi(https://github.com/itSubeDibesh)
  * 
@@ -11,7 +9,11 @@ import { ExtractElements } from './ExtractElements.js';
  * @function calculate(inputString) 
  * @function operation(inputString) 
  */
-export class BasicCalculation extends Inherit(ExtractElements, DOM) {
+export class EquationSolver extends DOM {
+    constructor(){
+        super(DOM);
+        this.elementsExtract = new ExtractCalculationElements();
+    }
     /**
      * Implements basic operation for the calculator.
      * @param {} inputString 
@@ -23,22 +25,22 @@ export class BasicCalculation extends Inherit(ExtractElements, DOM) {
         if (typeof (inputString) === 'string') {
 
             // Check If The Index of Operator is Less than 0
-            if (this.indexOfOperator(inputString) > 0) {
+            if (this.elementsExtract.indexOfOperator(inputString) > 0) {
                 return {
                     status: 'Success',
-                    result: this.basicCalculation(inputString)
+                    result: this.equationSolver(inputString)
                 };
             } else {
                 this.error.push({
                     inputString,
                     timeStamp: new Date().toString(),
                     error: 'Operator Not Found',
-                    message: `No operation sign like [${this.operators().split('')}] exists in inputString[${inputString}]`,
+                    message: `No operation sign like [${this.elementsExtract.operators().split('')}] exists in inputString[${inputString}]`,
                     errorPriority: this.errorPriority[2],
                 });
                 return {
                     status: 'Failure',
-                    Message: `No operation sign like [${this.operators().split('')}] exists in inputString[${inputString}]`
+                    Message: `No operation sign like [${this.elementsExtract.operators().split('')}] exists in inputString[${inputString}]`
                 }
             }
         } else {
@@ -65,14 +67,14 @@ export class BasicCalculation extends Inherit(ExtractElements, DOM) {
      *   let result;
      * 
      *   Addition:
-     *          console.log(basicCalculator('5+9')); Prints 14
+     *          console.log(equationSolver('5+9')); Prints 14
      * 
      *   Division:
-     *          console.log(basicCalculator('10/2')); Prints 5
+     *          console.log(equationSolver('10/2')); Prints 5
      */
-    basicCalculation(inputString) {
+    equationSolver(inputString) {
         const
-            el = this.operationElements(inputString),
+            el = this.elementsExtract.operationElements(inputString),
             o = el.operator,
             x = el.preOperand,
             y = el.postOperand;
@@ -81,7 +83,7 @@ export class BasicCalculation extends Inherit(ExtractElements, DOM) {
                 return (x + y);
             case '-':
                 return (x - y);
-            case '*':
+            case 'X':
                 return (x * y);
             case '/':
                 return (x / y);

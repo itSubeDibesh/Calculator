@@ -13,7 +13,7 @@ Initiated at :- [ Wednesday 28th October 2020 ]
 2. Implement input functionality from DOM only and perform calculation 
                                                   -- Completed at :- [ Friday 30th October 2020 ]
 3. Implement Buttons and Design In DOM
-                                                  -- Incomplete
+                                                  -- Completed at :- [ Friday 7th November 2020 ]
 4. Implement Alert and Error PopUp on DOM
                                                   -- Incomplete
 5. Create Application Environments for Different Modes Like [Production and Development]
