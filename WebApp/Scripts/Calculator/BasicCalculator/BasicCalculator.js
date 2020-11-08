@@ -1,13 +1,13 @@
 import { DOM, Inherit, Select } from "../../Dom/Dom.js";
 import { EquationSolver } from '../EquationSolver/EquationSolver.js';
-import { ClassFeature } from "../../Dom/Dom Elements/Elements Features/ClassFeature.js";
 /**
  * Variables to Make Application CLEAR
  */
 let
     clicked = false,
     clickCount = 0,
-    result;
+    result,
+    clearClickedCount = 0;
 /**
  * BasicCalculator Class @version 1.0
  *  
@@ -28,6 +28,7 @@ export class BasicCalculator extends Inherit(DOM, EquationSolver) {
         this.copyClipBoard = copyClipBoard;
         this.clearHistory = clearHistory;
         result = new Select().pick("result");
+        result.value=0;
     }
 
     /**
@@ -35,6 +36,7 @@ export class BasicCalculator extends Inherit(DOM, EquationSolver) {
      */
     changeClearButton = () => {
         clicked ? this.pick('SAC').innerText = 'C' : this.pick('SAC').innerText = 'AC';
+        console.log(clearClickedCount,result.value);
     }
 
     /**
@@ -108,6 +110,7 @@ export class BasicCalculator extends Inherit(DOM, EquationSolver) {
             result.value = 0;
             clicked = false;
             this.changeClearButton();
+            clearClickedCount++;
         });
     }
 
@@ -155,7 +158,7 @@ export class BasicCalculator extends Inherit(DOM, EquationSolver) {
     calculateResult = () => {
         this.setPostOperandValue();
         const
-            eqn = `${this.calculatorOperationElements.preOperand}${this.calculatorOperationElements.currentOperation.operation}${this.calculatorOperationElements.postOperand}`,
+            eqn = `${this.calculatorOperationElements.preOperand} ${this.calculatorOperationElements.currentOperation.operation} ${this.calculatorOperationElements.postOperand}`,
             res = this.calculate(eqn);
         this.calculatorOperationElements.previousResult = res;
         if (this.calculatorOperationElements.previousResult.status !== "Success")
@@ -170,7 +173,7 @@ export class BasicCalculator extends Inherit(DOM, EquationSolver) {
             this.calculatorOperationElements.previousResult = null;
         }
     }
-  
+
 
     /**
      * When Equals is Pressed
@@ -179,7 +182,6 @@ export class BasicCalculator extends Inherit(DOM, EquationSolver) {
         this.pick(this.calcButtons.superButtons[2]).addEventListener('click', (e) => {
             // Calculate result and store in app.calculatorOperationElements
             this.calculateResult();
-            console.log(this.calculatorOperationElements)
         });
     }
 }

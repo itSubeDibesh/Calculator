@@ -13,11 +13,11 @@ Initiated at :- [ Wednesday 28th October 2020 ]
 2. Implement input functionality from DOM only and perform calculation 
                                                   -- Completed at :- [ Friday 30th October 2020 ]
 3. Implement Buttons and Design In DOM
-                                                  -- Completed at :- [ Friday 7th November 2020 ]
+                                                  -- Completed at :- [ Friday 6th November 2020 ]
 4. Implement Alert and Error PopUp on DOM
                                                   -- Incomplete
 5. Create Application Environments for Different Modes Like [Production and Development]
-                                                  -- Incomplete
+                                                   -- Completed at :- [ Sunday 8th November 2020 ]
 6. Implement PWA as Well
                                                   -- Incomplete
 7. Make Chrome Extension as Well

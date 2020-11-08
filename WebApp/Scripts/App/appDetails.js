@@ -151,7 +151,7 @@ export const
 			{ "Key": "type", "Value": "text" },
 			{ "Key": "name", "Value": "result" },
 			{ "Key": "id", "Value": "result" },
-			{ "Key": "value", "Value": "0" }
+			{ "Key": "disabled" }
 		],
 		"appInformation": {
 			version,

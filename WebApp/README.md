@@ -4,14 +4,26 @@
 <p align="center">
 <img  src="./Assets/Images/favicon.png" width="200" alt="Calculator Logo" ></p>
 
-This file includes all the infromation related to [**Calculator Web App**](https://github.com/itSubeDibesh/Calculator/tree/main/WebApp) only.
+This file includes all the infromation related to [**Calculator Web App**](./) only.
 
 ---
 ## About this project
-This is one of my __Quest Project__ where I try to explore **JS** and make a multiple platform application using **JS** only and [**Calculator Web App**](https://github.com/itSubeDibesh/Calculator/tree/main/WebApp) is a part of  [**Calculator Project**](https://github.com/itSubeDibesh/Calculator). This documentation only includes information related to [**Web Version**](https://github.com/itSubeDibesh/Calculator/tree/main/WebApp) only.
+This is one of my __Quest Project__ where I try to explore **JS** and make a multiple platform application using **JS** only and [**Calculator Web App**](./) is a part of  [**Calculator**](../). This documentation only includes information related to [**Web Version**](./) only.
+
+___
+
+## Change Logs
+All the change logs related to __Calculator Web App__ are tracked in [__Change log__](./CHANGELOG.md) file.
+
+___
+
+## Todos
+All the todos related to __Calculator Web App__ are tracked in [__Todos__](./ToDo.md) file.
+
+___
 
 ## Folder Structure
-Folder Structure for [Calculator Web App](https://github.com/itSubeDibesh/Calculator/tree/main/WebApp).
+Folder Structure for [Calculator Web App](./).
 <pre>
 |----> WebApp
 |       |
@@ -20,10 +32,17 @@ Folder Structure for [Calculator Web App](https://github.com/itSubeDibesh/Calcul
 |       |       |---> Images
 |       |
 |       |---->  Scripts
+|       |       |---> App
 |       |       |---> Calculator
+|       |       |       |---> Basic Calculator
+|       |       |       |---> Equation Solver
 |       |       |---> Dom
-|       |               |---> Dom Features
-|       |               |---> Dom Elements
+|       |       |       |---> Dom Features
+|       |       |       |---> Dom Elements
+|       |       |           |---> Elements
+|       |       |           |---> Elements Features
+|       |       |---> Vendor
+
 </pre>
 
 

@@ -1,4 +1,9 @@
-// Starting Server :  SUDO /Applications/XAMPP/xamppfiles/xampp start
+/**
+ * Calculator Web App @version 1.0
+ * 
+ * Made with ❤️ By Dibesh Raj Subedi(https://github.com/itSubeDibesh)
+ */
+
 // Importing App and Calculator Classes for the application
 import { App } from './App/App.js';
 import { Calculator } from './Calculator/Calculator.js';
@@ -8,7 +13,7 @@ addEventListener("load", function (e) {
     const
         app = new App(),
         calculator = new Calculator(
-            app.calcButtons, app.addToHistory, app.copyClipBoard,app.clearHistory
+            app.calcButtons, app.addToHistory, app.copyClipBoard, app.clearHistory
         );
 
     // Initialize app elements and display in DOM
@@ -17,8 +22,7 @@ addEventListener("load", function (e) {
     // Initialize Calculator rules
     calculator.init();
 
-    // Clears Out All The Console Logs and Disables Console.log
-    // app.clear()
-    // app.disableLog();
-});
+    // Set Application Environment Mode [ Development or Production ]
+    app.setEnvironments(app.appEnvironments.Development);
 
+});

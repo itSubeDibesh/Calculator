@@ -1,7 +1,7 @@
-import { Element } from "./Dom Elements/DomElements.js";
-import { Debug } from "./Dom Features/Debug.js";
-import { Inherit } from './Dom Features/Inherit.js'
-import { Select } from "./Dom Features/Select.js";
+import { Element } from "./DomElements/DomElements.js";
+import { Debug } from "./DomFeatures/Debug.js";
+import { Inherit } from './DomFeatures/Inherit.js'
+import { Select } from "./DomFeatures/Select.js";
 /**
  * DOM Class @version 1.0
  * 

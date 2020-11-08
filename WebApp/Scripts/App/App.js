@@ -18,6 +18,8 @@ import { jsonDataSet } from './appDetails.js';
  * @prop hideCopyClipboard()
  * @prop setSVG()
  * @function addToHistory()
+ * @function clearHistory()
+ * @prop appEnvironments()
  */
 export class App extends DOM {
     /**
@@ -68,6 +70,7 @@ export class App extends DOM {
         this.addDomEvents();
         this.setCalculatorElements();
         this.log(`|-> App Initialization Completed at [${new Date().toString('HH:mm:ss.sss')}]`);
+        this.log(`|-> App Ready To Use`);
     }
 
     /**
@@ -85,6 +88,7 @@ export class App extends DOM {
      * Sets Application to Offline if no internet connection is detected
      */
     setOfline = () => {
+        this.status = this.pick("status");
         this.status.classList.replace('badge-success', 'badge-danger');
         this.status.innerText = "Offline";
         this.offlineDiv.style.display = 'block';
@@ -96,6 +100,7 @@ export class App extends DOM {
     * Sets Application to Online if internet connection is detected
     */
     setOnline = () => {
+        this.status = this.pick("status");
         this.status.classList.replace('badge-danger', 'badge-success');
         this.status.innerText = "Online";
         this.offlineDiv.style.display = 'none';
@@ -110,7 +115,7 @@ export class App extends DOM {
         const elements = document.querySelectorAll(".copyToMyClipBoard");
         elements.forEach(el => {
             el.addEventListener("click", (ev) => {
-                this.copyToClipboard(el.previousSibling.previousSibling.children[0].innerText);
+                this.copyToClipboard(el.previousSibling.previousSibling.children[1].innerText);
                 this.showCopyClipboard();
                 setTimeout(() => {
                     this.hideCopyClipboard();
@@ -320,7 +325,7 @@ export class App extends DOM {
                     <span class="operation">${equation}</span> = <span class="operationResult">${result}</span>
                 </code>
             &nbsp; &nbsp;
-            <a class="badge badge-pill badge-primary copyToMyClipBoard" href="#">Copy</a>
+            <a class="badge badge-pill badge-primary  copyToMyClipBoard" href="#">Copy Result</a>
             </li>`;
             history.append(this.parseStringToHTML(li));
         } else {
@@ -335,4 +340,33 @@ export class App extends DOM {
     clearHistory = () => {
         this.pick("historyDataSet").innerHTML = "";
     }
+
+    /**
+     * Returns AppEnvironments object
+     */
+    appEnvironments = {
+        "Production": true,
+        "Development": false
+    }
+
+    /**
+     * Sets App Environment to Production or Development.
+     * @param {bool} environment 
+     */
+
+    setEnvironments = (environment) => {
+        const oldLog = this.log;
+        if (environment) {
+            // Clears Out All The Console Logs and Disables Console.log
+            this.clear()
+            this.log("Production Mode Enabled");
+            this.disableLog();
+            this.log = null;
+        } else {
+            this.log = oldLog;
+            this.log("Development Mode Enabled");
+            this.enableLog();
+        }
+    }
+
 }

@@ -1,0 +1,99 @@
+{
+	"Author Details": {
+		"Name": "Dibesh Raj Subedi",
+		"GitHub": "https://github.com/itSubeDibesh"
+	},
+	"App Details": {
+		"root": [
+			{
+				"WebApp": {
+					"Version": 1.0,
+					"Folder Structure": {
+						"Assets": {
+							"Css": [ "app.css", "bootstrap.min.css", "bootstrap.min.css.map" ],
+							"Images": [
+								"favicon-16.png",
+								"favicon-32.png",
+								"favicon-64.png",
+								"favicon-512.png",
+								"favicon.png",
+								"favicon.ico"
+							]
+						},
+						"Scripts": {
+							"App": {
+								"App.js": {
+									"Version": 1.0,
+									"Dependency": [ "Dom.js", "appDetails.js" ]
+								},
+								"appDetails.js": {
+									"Version": 1.0
+								}
+							},
+							"Calculator": {
+								"BasicCalculator": {
+									"BasicCalculator.js": {
+										"Version": 1.0,
+										"Dependency": [ "EquationSolver.js", "Dom.js" ]
+									}
+								},
+								"EquationSolver": {
+									"EquationSolver.js": {
+										"Version": 1.0,
+										"Dependency": [ "ExtractCalculationElements.js", "Dom.js" ]
+									}
+								},
+								"Calculator.js": {
+									"Version": 1.0,
+									"Dependency": [ "Dom.js", "BasicCalculator.js" ]
+								},
+								"ExtractCalculationElements.js": {
+									"Version": 1.0
+								}
+							},
+							"Dom": {
+								"DOM.js": {
+									"Version": 1.0,
+									"Dependency": [ "Select.js", "Debug.js", "Inherit.js", "DomElements.js" ]
+								},
+								"DomFeatures": {
+									"Debug.js": {
+										"Version": 1.0
+									},
+									"Select.js": {
+										"Version": 1.0,
+										"Dependency": "Debug.js"
+									},
+									"Inherit.js": {
+										"Version": 1.0
+									}
+								},
+								"DomElements": {
+									"DomElements.js": {
+										"Version": 1.0,
+										"Dependency": "Element.js"
+									},
+									"ElementsFeatures": {
+										"ClassFeature": {
+											"Version": 1.0
+										}
+									},
+									"Elements": {
+										"Element.js": {
+											"Version": 1.0,
+											"Dependency": "ClassFeature.js"
+										}
+									}
+								}
+							},
+							"Vendor": [ "bootstrap.min.js", "bootstrap.min.js.map", "jquery-3.5.1.slim.min.js" ],
+							"root": "index.js"
+						},
+						"root": [ "index.html", "CHANGELOG.md", "README.md", "Todo.md" ]
+					}
+				}
+			},
+			[ "ProjectDetails.json", "CHANGELOG.md", "README.md", "Todo.md", "progress.txt"]
+		]
+	}
+}
