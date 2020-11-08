@@ -18,7 +18,7 @@ All the change logs related to __Calculator Web App__ are tracked in [__Change l
 ___
 
 ## Todos
-All the todos related to __Calculator Web App__ are tracked in [__Todos__](./ToDo.md) file.
+All the todos related to __Calculator Web App__ are tracked in [__Todos__](./Todo.md) file.
 
 ___
 
