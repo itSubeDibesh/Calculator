@@ -69,3 +69,14 @@ Can perform multiple operation, Keyboard Support and Theme support added.
 - Logging Exception when no Operation is carried out
 
 ___
+
+___
+## Released [[v1.0]](https://github.com/itSubeDibesh/Calculator/releases/tag/v1.0) - 2020-11-09
+
+## Features
+- Perform basic calculation like a calculator
+- Supports multiple operators in a equation
+- Keeps history of solutions
+- Implements dark and light theme modules
+
+___
