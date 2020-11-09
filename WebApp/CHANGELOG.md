@@ -71,7 +71,7 @@ Can perform multiple operation, Keyboard Support and Theme support added.
 ___
 
 ___
-## Released [[v1.0]](https://github.com/itSubeDibesh/Calculator/releases/tag/v1.01) - 2020-11-09
+## Released [[v1.0]](https://github.com/itSubeDibesh/Calculator/releases/tag/v1.0) - 2020-11-09
 
 ## Features
 - Perform basic calculation like a calculator
