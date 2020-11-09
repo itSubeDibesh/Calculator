@@ -42,7 +42,7 @@ export const
 				},
 				{
 					"identity": "OMUL",
-					"value": "X",
+					"value": "*",
 					"class": `${commonClass} btn-operator`,
 					"buttonColSize": "col-3"
 				},

@@ -45,3 +45,27 @@ ___
 ### __Removed__
 - Backup.Html File.
 ___
+
+## [Unreleased] [v1.0] - 2020-11-09
+Can perform multiple operation, Keyboard Support and Theme support added.
+### __Added__
+- Error / Exception Handling.
+- Keyboard Key Support
+- Theme Support added
+
+### __Updated__
+- BasicCalculator class.
+- EquationSolver class.
+- ExtractCalculationElements class.
+- Dom class.
+- Todo Updated
+
+### __Bugfix__
+- Input allows n digits after certain operations
+- Can perform operations like __[ - 67 + 67 ]__
+
+### __Removed__
+- Displaying Result when = is pressed after Operation is carried out.
+- Logging Exception when no Operation is carried out
+
+___

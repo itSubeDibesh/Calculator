@@ -19,10 +19,12 @@ addEventListener("load", function (e) {
     // Initialize app elements and display in DOM
     app.init();
 
+    // Initializes App theme
+    app.initTheme();
+
     // Initialize Calculator rules
     calculator.init();
 
     // Set Application Environment Mode [ Development or Production ]
-    app.setEnvironments(app.appEnvironments.Development);
-
+    app.setEnvironments(app.appEnvironments.Production);
 });

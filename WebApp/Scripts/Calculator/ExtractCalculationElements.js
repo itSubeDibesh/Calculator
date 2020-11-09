@@ -11,6 +11,7 @@
  * @function indexOfOperator(inputString) 
  * @function preOperand(inputString) 
  * @function postOperand(inputString) 
+ * @function operatorCount(inputString) 
  */
 
 export class ExtractCalculationElements {
@@ -20,10 +21,12 @@ export class ExtractCalculationElements {
      * @returns {object} operationElements
      */
     operationElements(inputString) {
+        this.operatorCount(inputString);
         return {
             preOperand: parseFloat(this.preOperand(inputString)),
             postOperand: parseFloat(this.postOperand(inputString)),
             operator: this.operator(inputString),
+            operatorCount: this.operatorCount(inputString)
         }
     }
 
@@ -33,7 +36,13 @@ export class ExtractCalculationElements {
      * @returns {String} operator
      */
     operator(inputString) {
-        return inputString[this.indexOfOperator(inputString)]
+        const ops = [];
+        inputString.split('').forEach(element => {
+            if (this.operators().includes(element)) {
+                ops.push(element)
+            }
+        });
+        return ops;
     }
 
     /**
@@ -70,9 +79,23 @@ export class ExtractCalculationElements {
     }
 
     /**
+     * Returns Number of operators used in calculation
+     * @param {String} inputString 
+     */
+    operatorCount(inputString) {
+        let count = 0;
+        this.operators().split('').forEach(symbol => {
+            if (inputString.includes(symbol)) {
+                count++;
+            }
+        });
+        return count;
+    }
+
+    /**
      * Distinguished operators String
      */
     operators() {
-        return `+-X/%`;
+        return `+-*/%`;
     }
 }

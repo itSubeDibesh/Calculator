@@ -6,14 +6,20 @@ import { EquationSolver } from '../EquationSolver/EquationSolver.js';
 let
     clicked = false,
     clickCount = 0,
-    result,
-    clearClickedCount = 0;
+    result;
 /**
  * BasicCalculator Class @version 1.0
  *  
  * Made with ❤️ By Dibesh Raj Subedi(https://github.com/itSubeDibesh)
  * 
  * Implements the Basic Calculator.
+ * @prop changeClearButton()
+ * @function selectNumbers()
+ * @function insertNumberToResultInput()
+ * @prop implementDots()
+ * @function clearCalculation()
+ * @function implementOperators()
+ * @function calculateResult()
  * 
  */
 export class BasicCalculator extends Inherit(DOM, EquationSolver) {
@@ -28,7 +34,6 @@ export class BasicCalculator extends Inherit(DOM, EquationSolver) {
         this.copyClipBoard = copyClipBoard;
         this.clearHistory = clearHistory;
         result = new Select().pick("result");
-        result.value=0;
     }
 
     /**
@@ -36,19 +41,38 @@ export class BasicCalculator extends Inherit(DOM, EquationSolver) {
      */
     changeClearButton = () => {
         clicked ? this.pick('SAC').innerText = 'C' : this.pick('SAC').innerText = 'AC';
-        console.log(clearClickedCount,result.value);
     }
 
     /**
      * Selecting and appending all the number to result input
      */
     selectNumbers = () => {
-        this.calcButtons.numberButtons.forEach(element => {
-            this.pick(element).addEventListener('click', (e) => {
+        const
+            l = ["N0", "N1", "N2", "N3", "N4", "N5", "N6", "N7", "N8", "N9"],
+            commonFactory = (element, e) => {
                 clicked = true;
                 this.changeClearButton();
                 this.insertNumberToResultInput(element, e);
+            },
+            // Sets the Factpry Fro Keyboard Operator Key Trigger
+            triggerFn = (e, trigger, element) => {
+                if (e.key === trigger) {
+                    commonFactory(element, e);
+                }
+            };
+
+        // Triggers When Button in DOM is Pressed
+        this.calcButtons.numberButtons.forEach(element => {
+            this.pick(element).addEventListener('click', (e) => {
+                commonFactory(element, e);
             });
+        });
+
+        // Triggers Keyboard Buttons are pressed
+        addEventListener('keyup', (e) => {
+            for(let i=0;i<10;i++){
+                triggerFn(e, `${i}`, l[i]);
+            }
         });
     }
 
@@ -58,22 +82,16 @@ export class BasicCalculator extends Inherit(DOM, EquationSolver) {
      * @param {Event} e 
      */
     insertNumberToResultInput = (element, e) => {
-        // Check if the preOperandAdded is True, If True then clear the result div and add the new number to result div. 
-        if (this.calculatorOperationElements.preOperandAdded) {
-            // Compare the length of the result div elements and preOperand elements
-            if (result.value.length === this.calculatorOperationElements.preOperand.length) {
-                result.value = '';
-            }
-        }
-
         // Check If click count  is 0 and if clicked button is 0 then dont append another 0
         if (clickCount === 0 && e.target.innerHTML == 0 && result.value[0] == 0) {
             result.value = element.replace('N', '');
         }
         else {
-            // Remove 0  from first if the number is not decimal 
-            if (result.value[0] == 0 && result.value[1] !== '.') {
-                result.value = '';
+            // Remove 0  from first if the number is not decimal or not 
+            if (
+                (result.value[0] == 0 && result.value[1] !== '.')
+            ) {
+                result.value += '';
             }
             // Increase Clicked Count 
             clickCount++;
@@ -85,8 +103,8 @@ export class BasicCalculator extends Inherit(DOM, EquationSolver) {
      * Implement Dot before and after number and appending as well
      */
     implementDots = () => {
-        const dot = this.calcButtons.superButtons[1];
-        this.pick(dot).addEventListener('click', () => {
+        const dot = this.calcButtons.superButtons[1],
+        commonFn=()=>{
             clickCount++;
             clicked = true;
             this.changeClearButton();
@@ -97,6 +115,16 @@ export class BasicCalculator extends Inherit(DOM, EquationSolver) {
                 if (!result.value.includes('.'))
                     result.value += this.pick(dot).innerText;
             }
+        };
+        this.pick(dot).addEventListener('click', () => {
+            commonFn();
+        });
+
+         // Triggers Keyboard "." Key Press Event
+         addEventListener('keyup', (e) => {
+            if (e.key === ".") {
+                commonFn();
+            }
         });
     }
 
@@ -104,84 +132,100 @@ export class BasicCalculator extends Inherit(DOM, EquationSolver) {
      * Clears Out The Input Div and Restes to previous state of application and clears history
      */
     clearCalculation = () => {
-        const clear = this.calcButtons.superButtons[0];
+        const
+            clear = this.calcButtons.superButtons[0],
+            commonFactory = () => {
+                clickCount = 0;
+                result.value = ' ';
+                clicked = false;
+                this.changeClearButton();
+            };
+
+        // Triggers Button Click Event in DOM
         this.pick(clear).addEventListener('click', () => {
-            clickCount = 0;
-            result.value = 0;
-            clicked = false;
-            this.changeClearButton();
-            clearClickedCount++;
+            commonFactory();
+        });
+
+        // Triggers Keyboard "Backspace" Key Press Event
+        addEventListener('keyup', (e) => {
+            if (e.key === "Backspace") {
+                commonFactory();
+            }
         });
     }
-
-    /**
-     * Returns the Claculator Operation Elements
-     */
-    calculatorOperationElements = {
-        currentOperation: null,
-        preOperand: null,
-        postOperand: null,
-        preOperandAdded: false,
-        postOperandAdded: false,
-        previousResult: null,
-    };
 
     /**
      * Selecting and appending all Operator elements
      */
     implementOperators = () => {
+        // Sets The value according to event
+        const
+            commonFn = (element) => {
+                if (result.value == 0 && element == "OSUB") {
+                    result.value = this.pick(element).innerText;
+                } else if (result.value == 0 && (element == "ODIV" || element == "OMUL")) {
+                    result.value = 0;
+                    result.value += this.pick(element).innerText;
+                }
+                else
+                    result.value += this.pick(element).innerText;
+            },
+            // Sets the Factpry Fro Keyboard Operator Key Trigger
+            triggerFactory = (e, trigger, element) => {
+                if (e.key === trigger) {
+                    commonFn(element);
+                }
+            };
+
+        // Triggers Button Click Event in DOM
         this.calcButtons.operatorButtons.forEach(element => {
             this.pick(element).addEventListener('click', (e) => {
-                // Setting currentOperation value
-                this.calculatorOperationElements.currentOperation = {
-                    botton: this.pick(element),
-                    operation: this.pick(element).innerText
-                };
-                this.calculatorOperationElements.preOperand = result.value;
-                this.calculatorOperationElements.preOperandAdded = true;
+                commonFn(element);
             });
+        });
+
+        // Trigger Keyboard Event
+        addEventListener('keyup', (e) => {
+            triggerFactory(e, "+", "OSUM");
+            triggerFactory(e, "-", "OSUB");
+            triggerFactory(e, "*", "OMUL");
+            triggerFactory(e, "/", "ODIV");
+            triggerFactory(e, "%", "OMOD");
         });
     }
 
     /**
-     * Set value to post postOperand and make postOperandAdded as True before calculating the result
-     */
-    setPostOperandValue = () => {
-        this.calculatorOperationElements.postOperand = result.value;
-        this.calculatorOperationElements.postOperandAdded = true;
-    }
-
-    /**
-     * Calculate result and store it on result variable of calculatorOperationElements and set preOperand as result
-     * and preOperandAdded = True and postOperand to null and postOperandAdded to False, show result to result div and Result to null
+     * Calculate Result and add to history and display on dom
      */
     calculateResult = () => {
-        this.setPostOperandValue();
         const
-            eqn = `${this.calculatorOperationElements.preOperand} ${this.calculatorOperationElements.currentOperation.operation} ${this.calculatorOperationElements.postOperand}`,
-            res = this.calculate(eqn);
-        this.calculatorOperationElements.previousResult = res;
-        if (this.calculatorOperationElements.previousResult.status !== "Success")
-            console.log(this.calculatorOperationElements.previousResult.Message)
-        else {
-            this.addToHistory(eqn, res.result);
+            input = result.value,
+            res = this.calculate(input),
+            diaplay = res.show === "Input" ? input : res.result;
+        if (res.status === "Success") {
+            this.addToHistory(input, diaplay);
             this.copyClipBoard();
-            this.calculatorOperationElements.preOperand = this.calculatorOperationElements.previousResult.result;
-            this.calculatorOperationElements.postOperand = null;
-            this.calculatorOperationElements.postOperandAdded = false;
-            result.value = res.result;
-            this.calculatorOperationElements.previousResult = null;
+            // Display Same value as input or Result
+            result.value = diaplay;
         }
+        //  Logs out BasicCalculator.js:128 No operation sign like [+,-,X,/,%] exists in inputString[0]
+        // else console.log(res.Message)  
     }
-
 
     /**
      * When Equals is Pressed
      */
     implementEqualsTo = () => {
+        // Triggers Button "=" Key Press Event in DOM
         this.pick(this.calcButtons.superButtons[2]).addEventListener('click', (e) => {
-            // Calculate result and store in app.calculatorOperationElements
             this.calculateResult();
+        });
+
+        // Triggers Keyboard "=" Key Press Event
+        addEventListener('keyup', (e) => {
+            if (e.key === "="||e.key === "Enter") {
+                this.calculateResult();
+            }
         });
     }
 }

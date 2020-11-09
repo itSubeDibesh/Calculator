@@ -30,13 +30,10 @@ export class ClassFeature {
     constructor(element) {
         // Sets the constructor to selected element
         this.element = element;
-
         // Returns classList
         this.list = element.classList;
-
         // Returns the number of tokens.
         this.length = element.classList.length;
-
     }
 
     /**

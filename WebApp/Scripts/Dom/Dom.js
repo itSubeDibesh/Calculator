@@ -12,6 +12,8 @@ import { Select } from "./DomFeatures/Select.js";
  * @function parseStringToHTML(htmlString)
  * @function disableLog()
  * @function enableLog()
+ * @function disableError()
+ * @function enableError()
  * @function clear()
  * @function copyToClipboard(str)
  */
@@ -46,11 +48,27 @@ class DOM extends Inherit(Select, Debug, Element) {
     }
 
     /**
+    * Disables Console.Error
+    */
+    disableError = () => {
+        this.warn("|-> Console Error Disabled.")
+        console.error = () => (null);
+    }
+
+    /**
      * Enables Console.Log
      */
     enableLog = () => {
         this.warn("|-> Console Log Enabled.")
         console.log = this.log;
+    }
+
+    /**
+     * Enables Console.Error
+     */
+    enableError = () => {
+        this.warn("|-> Console Error Enabled.")
+        console.error = this.logError;
     }
 
     /**

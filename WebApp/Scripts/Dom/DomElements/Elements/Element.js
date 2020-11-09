@@ -1,4 +1,4 @@
-import { ClassFeature } from '../Elements Features/ClassFeature.js';
+import { ClassFeature } from '../ElementsFeatures/ClassFeature.js';
 /**
  * Element Class @version 1.0
  *  

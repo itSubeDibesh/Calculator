@@ -1,4 +1,4 @@
-import { Debug } from '../Dom/Dom.js';
+import { Debug} from '../Dom/Dom.js';
 import { BasicCalculator } from './BasicCalculator/BasicCalculator.js';
 /**
  * Calculator Class @version 1.0

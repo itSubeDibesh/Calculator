@@ -7,10 +7,10 @@ import { ExtractCalculationElements } from '../ExtractCalculationElements.js';
  * 
  * Implements basic operation for the calculator.
  * @function calculate(inputString) 
- * @function operation(inputString) 
+ * @function equationSolver(inputString) 
  */
 export class EquationSolver extends DOM {
-    constructor(){
+    constructor() {
         super(DOM);
         this.elementsExtract = new ExtractCalculationElements();
     }
@@ -23,12 +23,25 @@ export class EquationSolver extends DOM {
     calculate(inputString) {
         // Check If the input Type is String Of Not
         if (typeof (inputString) === 'string') {
+            const result = this.equationSolver(inputString);
+            // Check if the result is NaN or Number
+            let show;
+            if (result !== NaN) {
+                const c = result + "";
+                if (c.includes("NaN")) {
+                    show = "Input";
+                }
+                else {
+                    show = "Result";
+                }
+            }
 
-            // Check If The Index of Operator is Less than 0
-            if (this.elementsExtract.indexOfOperator(inputString) > 0) {
+            // Check If result is number, Always true unless exception
+            if (typeof (result) === "number") {
                 return {
                     status: 'Success',
-                    result: this.equationSolver(inputString)
+                    result,
+                    show
                 };
             } else {
                 this.error.push({
@@ -77,20 +90,25 @@ export class EquationSolver extends DOM {
             el = this.elementsExtract.operationElements(inputString),
             o = el.operator,
             x = el.preOperand,
-            y = el.postOperand;
-        switch (o) {
-            case '+':
-                return (x + y);
-            case '-':
-                return (x - y);
-            case 'X':
-                return (x * y);
-            case '/':
-                return (x / y);
-            case '%':
-                return ((y * x) / 100);
-            default:
-                return 0;
+            y = el.postOperand,
+            count = el.operatorCount;
+        if (count === 1) {
+            switch (o[0]) {
+                case '+':
+                    return parseFloat(x + y);
+                case '-':
+                    return parseFloat(x - y);
+                case '*':
+                    return parseFloat(x * y);
+                case '/':
+                    return parseFloat(x / y);
+                case '%':
+                    return parseFloat((y * x) / 100);
+                default:
+                    return 0;
+            }
+        } else {
+            return eval(inputString);
         }
     };
 }

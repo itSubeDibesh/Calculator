@@ -1,4 +1,5 @@
 import { DOM, Element, Select } from "../Dom/Dom.js";
+import { ClassFeature } from "../Dom/DomElements/ElementsFeatures/ClassFeature.js";
 import { jsonDataSet } from './appDetails.js';
 /**
  * App Class @version 1.0
@@ -20,6 +21,10 @@ import { jsonDataSet } from './appDetails.js';
  * @function addToHistory()
  * @function clearHistory()
  * @prop appEnvironments()
+ * @prop darkTheme()
+ * @prop lightTheme()
+ * @prop theme()
+ * @function initTheme()
  */
 export class App extends DOM {
     /**
@@ -155,6 +160,7 @@ export class App extends DOM {
          * Clears Up The History
          */
         this.pick("clearhistory").addEventListener("click", this.clearHistory);
+
     }
 
     /**
@@ -355,18 +361,83 @@ export class App extends DOM {
      */
 
     setEnvironments = (environment) => {
-        const oldLog = this.log;
+        const
+            oldLog = this.log,
+            oldError = this.logError;
         if (environment) {
             // Clears Out All The Console Logs and Disables Console.log
             this.clear()
-            this.log("Production Mode Enabled");
+            this.log("|-> Production Mode Enabled");
             this.disableLog();
+            this.disableError();
             this.log = null;
+            this.logError = null;
         } else {
             this.log = oldLog;
-            this.log("Development Mode Enabled");
+            this.logError = oldError;
+            this.log("|-> Development Mode Enabled");
             this.enableLog();
+            this.enableError();
         }
     }
 
+    /**
+    * Sets Dark Theme
+    */
+    darkTheme = () => {
+        // Change Border and Bg color 
+        for (let index = 0; index < this.pick("themeChanger").length; index++) {
+            new ClassFeature(this.pick("themeChanger")[index]).add("bg-dark border-light");
+        }
+        // CHange Ol Bg Color To Secondary
+        this.pick("ol")[0].classList.add("bg-secondary");
+        // Change Text color To Light
+        this.pick("result").classList.add("text-light");
+        // Change Card Color
+        for (let index = 0; index < this.pick("card").length; index++) {
+            new ClassFeature(this.pick("card")[index]).add("bg-dark text-light border-light")
+        }
+    }
+
+    /**
+     * Sets Light Theme
+     */
+    lightTheme = () => {
+        // Change Border and Bg color 
+        for (let index = 0; index < this.pick("themeChanger").length; index++) {
+            new ClassFeature(this.pick("themeChanger")[index]).remove("bg-dark border-light");
+        }
+        // CHange Ol Bg Color To Secondary
+        this.pick("ol")[0].classList.remove("bg-secondary");
+        // Change Text color To Light
+        this.pick("result").classList.remove("text-light");
+        // Change Card Color
+        for (let index = 0; index < this.pick("card").length; index++) {
+            new ClassFeature(this.pick("card")[index]).remove("bg-dark text-light border-light")
+        }
+    }
+
+    /**
+     * Sets The color
+     * @param {bool} color 
+     */
+    theme = (color = "light") => {
+        // Set To Local Storage
+        localStorage.setItem("theme", color);
+        // Check and Trigger Correct Color
+        localStorage.getItem("theme") === "light" ? this.lightTheme() : this.darkTheme();
+    }
+
+    /**
+     * Init Theme
+     * @param {bool} color 
+     */
+    initTheme = () => {
+        const myThis = this;
+        // Set Trigger
+        this.pick("themeLight").addEventListener('click', function () { myThis.theme("light"); });
+        this.pick("themeDark").addEventListener('click', function () { myThis.theme("dark"); });
+        // Validate Local Storage
+        localStorage.getItem("theme") === "dark" ? this.theme("dark") : this.theme();
+    }
 }

@@ -24,7 +24,7 @@
 							"App": {
 								"App.js": {
 									"Version": 1.0,
-									"Dependency": [ "Dom.js", "appDetails.js" ]
+									"Dependency": [ "Dom.js", "appDetails.js","ClassFeature.js" ]
 								},
 								"appDetails.js": {
 									"Version": 1.0
