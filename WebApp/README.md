@@ -49,3 +49,18 @@ Folder Structure for [Calculator Web App](./).
 ## Releases
 1. __[Calculator Web App P2 [v1.0-beta.1]](https://github.com/itSubeDibesh/Calculator/releases/tag/v1.0-beta.1)__
 This version of Calculator Web App v1.0-beta.1 only includes basic functions like [Addition +, Subtraction -, Multiplication *, Division / and Modulus % ] operation. Moreover, the result div shows the invalid error and results after calculation and hides when no operation is carried out.
+
+## Releases
+1. __[Calculator Web App [v1.0]](https://github.com/itSubeDibesh/Calculator/releases/tag/v1.0)__
+Performs all the operations enlisted in features 
+
+### Features
+- Perform basic calculation like a calculator
+- Supports multiple operators in a equation
+- Keeps history of solutions
+- Implements dark and light theme modules
+
+
+## __Preview__
+<p align="center"><img width="402" alt="image" src="https://github.com/itSubeDibesh/Calculator/blob/main/WebApp/Assets/Images/AppImages/LightMode.png"></p>
+
