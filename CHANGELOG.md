@@ -10,3 +10,6 @@ ___
 
 1.  Released [[v1.0-beta1]](https://github.com/itSubeDibesh/Calculator/releases/tag/v1.0-beta.1) - 2020-10-28 
 2.  Released [[v1.0]](https://github.com/itSubeDibesh/Calculator/releases/tag/v1.0) - 2020-11-09 
+
+## [__Calculator PWA Releases__](./PWA)
+1.  Released [[v1.0-pwa]](https://github.com/itSubeDibesh/Calculator/releases/tag/v1.0-pwa) - 2020-11-10 
