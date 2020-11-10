@@ -1,0 +1,37 @@
+{
+	"name": "Calculator",
+	"short_name": "Calculator",
+	"description": "A Calculator Web App using Js by Dibesh Raj Subedi, A quest from noob to be a pro Js Developer.",
+	"icons": [
+		{
+			"src": "./Assets/Images/favicon-16.png",
+			"type": "image/png",
+			"sizes": "16x16",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "./Assets/Images/favicon-32.png",
+			"type": "image/png",
+			"sizes": "32x32",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "./Assets/Images/favicon-64.png",
+			"type": "image/png",
+			"sizes": "64x64",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "./Assets/Images/favicon-512.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "any maskable"
+		}
+	],
+	"start_url": "index.html",
+	"display": "standalone",
+	"scope": "/",
+	"theme_color": "rgb(235, 154, 5)",
+	"background_color": "#fdfdfd",
+	"orientation": "portrait-primary"
+}

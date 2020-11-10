@@ -19,7 +19,7 @@ Initiated at :- [ Wednesday 28th October 2020 ]
 5. Create Application Environments for Different Modes Like [Production and Development]
                                                    -- Completed at :- [ Sunday 8th November 2020 ]
 6. Implement PWA as Well
-                                                  -- Incomplete
+                                                  -- Completed at :- [ Tuesday 10th November 2020 ]
 7. Make Chrome Extension as Well
                                                   -- Incomplete
 8. Make Extension for Other Platform as Well
