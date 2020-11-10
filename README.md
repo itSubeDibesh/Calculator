@@ -12,7 +12,7 @@ This is one of my __Quest Project__ where I try to explore **JS** and make a mul
 
 1. [__Calculator Web App__](./WebApp)
 1. __Calculator Extension__
-1. __Calculator PWA__
+1. [__Calculator PWA__](./PWA)
 1. __Calculator Mobile App__
 1. __Calculator Desktop App__
 
