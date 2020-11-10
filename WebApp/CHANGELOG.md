@@ -68,7 +68,6 @@ Can perform multiple operation, Keyboard Support and Theme support added.
 - Displaying Result when = is pressed after Operation is carried out.
 - Logging Exception when no Operation is carried out
 
-___
 
 ___
 ## Released [[v1.0]](https://github.com/itSubeDibesh/Calculator/releases/tag/v1.0) - 2020-11-09
