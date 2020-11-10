@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 400px; 
+    height: auto;
+}
+
+
+.card{
+    border: solid black 1px;
+}
+
+.h-200{
+    height: 200%!important;
+}
+
+.btn{
+    font-size:large;
+}
+
+.btn-operator {
+    color: #000;
+    background-color:rgba(218, 213, 212, 0.8);
+    border-color: rgba(218, 213, 212, 0.8);
+}
+
+.btn-operator:hover{
+    color: #000;
+    background-color: rgba(241, 236, 235, 0.8);
+    border-color:  rgba(241, 236, 235, 0.8);
+}
+
+
+.btn-button,.btn-dot {
+    color: #000;
+    background-color: lightgray;
+    border-color: lightgray;
+}
+
+.btn-button:hover,.btn-dot:hover{
+    color: #000;
+    background-color:rgba(230, 227, 227, 0.815);
+    border-color: rgba(230, 227, 227, 0.815);
+}
+
+
+.btn-result {
+    color: #fff;
+    background-color:  rgba(224, 150, 11, 0.842);
+    border-color: rgba(224, 150, 11, 0.842);
+}
+
+.btn-result:hover{
+    color: #fff;
+    background-color: rgb(235, 154, 5);
+    border-color:  rgb(235, 154, 5);
+}

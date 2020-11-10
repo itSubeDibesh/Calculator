@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Dibesh Raj Subedi">
+    <meta name="keywords" content="
+        Javascript, Calculator, 
+        Multiplatform Calculator, Calculculator Web App, Calculator By Dibesh Raj Subedi,
+    ">
+        
+    <meta name="description" content="
+        A Multiplatform calculator app using Js by Dibesh Raj Subedi, A quest from noob to be a pro Js Developer.
+    ">
+
+    <!-- Application Title -->
+    <title>Calculator</title>
+
+    <!-- Embeding FavIcons and Apple Touch Icons -->
+    <link rel="shortcut icon" href="./Assets/Images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./Assets/Images/favicon.png">
+    <link rel="apple-touch-icon" href="./Assets/Images/favicon-64.png">
+    <link rel="apple-touch-icon" href="./Assets/Images/favicon-512.png">
+
+    <!-- Including Bootstrap 4.5 as css Framework -->
+    <link rel="stylesheet" href="./Assets/Css/bootstrap.min.css">
+
+    <!-- Customizing and Adding owne css Elements-->
+    <link rel="stylesheet" href="./Assets/Css/app.css">
+</head>
+
+<body class="themeChanger">
+    <!-- App Container -->
+    <div class="rounded-pill" id="app">
+
+        <div class="mt-2 text-center" id="calculator">
+            <div class="card m-2 p-2 pt-2 themeChanger">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 border-bottom border-primary pb-1">
+                            <span class="h5">Calculator Web App
+                                <!-- Information about app -->
+                                <a class="badge text-success aboutSvg" data-toggle="collapse" href="#about" role="button"
+                                    aria-expanded="false" aria-controls="about">
+                                </a>
+                                <!-- Settings -->
+                                <a class="badge text-danger settingSvg" data-toggle="collapse" href="#settings"
+                                    role="button" aria-expanded="false" aria-controls="settings">
+                                </a>
+                                <!-- History -->
+                                <a class="badge text-primary historySvg" data-toggle="collapse" href="#history"
+                                    role="button" aria-expanded="false" aria-controls="history">
+                                </a>
+                            </span>
+                            <br>
+                            <sub class="h6 text-center" id="author">
+                            </sub>
+
+                            <!-- Togglable Drop Down -->
+                            <div class="row">
+
+                                <!-- About -->
+                                <div class="col-12 pb-1 pt-2">
+                                    <div class="collapse multi-collapse" id="about">
+                                        <div class="card">
+                                            <div class="card-title border-bottom border-dark p-2 h6 text-left aboutSvg">
+                                                &nbsp; About Calculator
+                                            </div>
+                                            <div class="card-body" style="margin-top: -20px; margin-bottom: -10px;">
+                                                <div id="appDetails">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Settings -->
+                            <div class="col-12 pb-1">
+                                <div class="collapse multi-collapse" id="settings">
+                                    <div class="card">
+                                        <div class="card-title border-bottom border-dark p-1 h6 text-left settingSvg">
+                                            &nbsp; Calculator Settings
+                                        </div>
+                                        <div class="card-body text-left"
+                                            style="margin-top: -20px; margin-bottom: -10px;">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <!-- Theme -->
+                                                    <a class="btn btn-secondary btn-sm text-light rounded themeSvg"
+                                                        type="button" data-toggle="collapse" href="#theme" role="button"
+                                                        aria-expanded="false" aria-controls="theme">
+                                                        Theme
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="collapse multi-collapse container mb-2" id="theme">
+                                            <div class="card bg-secondary text-white">
+                                                <div
+                                                    class="card-title border-bottom border-light p-2 text-left themeSvg">
+                                                    &nbsp; Theme
+                                                </div>
+
+                                                <div class="row pb-2">
+                                                    <div class="col-6">
+                                                        <!-- Light -->
+                                                        <a class="btn btn-light btn-sm text-dark rounded themeSvg"
+                                                            type="button" href="#" id="themeLight">
+                                                            Light
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <!-- Dark -->
+                                                        <a class="btn btn-dark btn-sm text-light rounded themeSvg"
+                                                            type="button" href="#" id="themeDark">
+                                                            Dark
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- History -->
+                            <div class="col-12 pb-1">
+                                <div class="collapse multi-collapse" id="history">
+                                    <div class="card">
+                                        <div class="card-title border-bottom border-dark p-2 h6 text-left historySvg">
+                                            &nbsp;History
+                                        </div>
+                                        <div class="text-right pr-4" id="clearhistory">
+                                            <a href="#" class="badge badge-pill badge-danger">Clear
+                                                History</a>
+                                        </div>
+                                        <div class="card-body text-left mt-1 overflow-auto p-3 mb-3"
+                                            style="margin-top: -20px; margin-bottom: -10px; max-height: 80px">
+                                            <ol class="text-left" id="historyDataSet">
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="calculatorDiv">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Incase of No Script -->
+    <noscript>
+        <style>
+            #app {
+                display: none;
+            }
+        </style>
+        <div class="container text-center">
+            <div class="bg-danger rounded-pill w-100 p-2 mt-3 text-white">
+                You'r browser does not support JavaScript!
+                <br> Or Might be blocked.
+            </div>
+        </div>
+    </noscript>
+
+    <!-- Incase of No Internet -->
+    <div id="offline" style="display: none;">
+        <div class="container text-center">
+            <div class="bg-danger rounded-pill w-100 p-2 mt-3 text-white">
+                No Internet Connection.
+                <br> Please try again later .....
+            </div>
+        </div>
+    </div>
+
+    <!-- Vendor Files -->
+    <script src="./Scripts/Vendor/jquery-3.5.1.slim.min.js"></script>
+    <script src="./Scripts/Vendor/bootstrap.min.js"></script>
+    <!-- Including js file for calculator app -->
+    <script src="./Scripts/index.js" type="module"></script>
+
+</body>
+
+</html>
