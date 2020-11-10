@@ -30,6 +30,7 @@ Folder Structure for [Calculator Web App](./).
 |       |----> Assets 
 |       |       |---> Css
 |       |       |---> Images
+|       |           |---> AppImages
 |       |
 |       |---->  Scripts
 |       |       |---> App
