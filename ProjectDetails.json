@@ -97,6 +97,97 @@
 						"root": [ "index.html", "manifest.json", "serviceWorker.json" ]
 					}
 				},
+				"Chrome_Extension": {
+					"Version": 1.0,
+					"Folder Structure": {
+						"Assets": {
+							"Css": [ "app.min.css", "bootstrap.min.css", "bootstrap.min.css.map" ],
+							"Images": [
+								"favicon-16.png",
+								"favicon-32.png",
+								"favicon-64.png",
+								"favicon-512.png",
+								"favicon.png",
+								"favicon.ico"
+							]
+						},
+						"Scripts": {
+							"App": {
+								"App.min.js": {
+									"Version": 1.0,
+									"Dependency": [ "Dom.min.js", "appDetails.min.js", "ClassFeature.min.js" ]
+								},
+								"appDetails.min.js": {
+									"Version": 1.0
+								}
+							},
+							"Calculator": {
+								"BasicCalculator": {
+									"BasicCalculator.min.js": {
+										"Version": 1.0,
+										"Dependency": [ "EquationSolver.min.js", "Dom.min.js" ]
+									}
+								},
+								"EquationSolver": {
+									"EquationSolver.min.js": {
+										"Version": 1.0,
+										"Dependency": [ "ExtractCalculationElements.min.js", "Dom.min.js" ]
+									}
+								},
+								"Calculator.min.js": {
+									"Version": 1.0,
+									"Dependency": [ "Dom.min.js", "BasicCalculator.min.js" ]
+								},
+								"ExtractCalculationElements.min.js": {
+									"Version": 1.0
+								}
+							},
+							"Dom": {
+								"DOM.min.js": {
+									"Version": 1.0,
+									"Dependency": [
+										"Select.min.js",
+										"Debug.min.js",
+										"Inherit.min.js",
+										"DomElements.min.js"
+									]
+								},
+								"DomFeatures": {
+									"Debug.min.js": {
+										"Version": 1.0
+									},
+									"Select.min.js": {
+										"Version": 1.0,
+										"Dependency": "Debug.min.js"
+									},
+									"Inherit.min.js": {
+										"Version": 1.0
+									}
+								},
+								"DomElements": {
+									"DomElements.min.js": {
+										"Version": 1.0,
+										"Dependency": "Element.min.js"
+									},
+									"ElementsFeatures": {
+										"ClassFeature": {
+											"Version": 1.0
+										}
+									},
+									"Elements": {
+										"Element.min.js": {
+											"Version": 1.0,
+											"Dependency": "ClassFeature.min.js"
+										}
+									}
+								}
+							},
+							"Vendor": [ "bootstrap.min.js", "bootstrap.min.js.map", "jquery-3.5.1.slim.min.js" ],
+							"root": "index.min.js"
+						},
+						"root": [ "index.html", "manifest.json" ]
+					}
+				},
 				"WebApp": {
 					"Version": 1.0,
 					"Folder Structure": {

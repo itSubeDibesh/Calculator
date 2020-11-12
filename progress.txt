@@ -21,7 +21,7 @@ Initiated at :- [ Wednesday 28th October 2020 ]
 6. Implement PWA as Well
                                                   -- Completed at :- [ Tuesday 10th November 2020 ]
 7. Make Chrome Extension as Well
-                                                  -- Incomplete
+                                                  -- Completed at :- [ Thursday 12th November 2020 ]
 8. Make Extension for Other Platform as Well
                                                   -- Incomplete
 
