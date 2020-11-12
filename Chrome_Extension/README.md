@@ -34,6 +34,10 @@ Folder Structure for [Calculator Chrome Extension](./).
 |       |       |---> Vendor
 
 </pre>
+## Releases
+1. __[Calculator Extension[v1.0-cExt]](https://github.com/itSubeDibesh/Calculator/releases/tag/v1.0-cExt)__
+Calculator Chrome /  Firefox Extension  Implements the same website file so that it could be used as extension in chrome and firefox browser.
+
 ___
 
 ## How to install Extension in [Chrome](https://www.google.com/chrome/) / [Chromium](https://www.chromium.org/) based Browser.
