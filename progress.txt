@@ -5,7 +5,7 @@
                                            Web App 
 ----------------------------------------------------------------------------------------------------
 Initiated at :- [ Wednesday 28th October 2020 ]    
-                                                     Completed at :- [ ]  
+                                                     Completed at :- [ Thursday 12th November 2020 ]  
 ----------------------------------------------------------------------------------------------------
                     
 1. Make a Class that supports basic calculation using console only 
@@ -23,7 +23,7 @@ Initiated at :- [ Wednesday 28th October 2020 ]
 7. Make Chrome Extension as Well
                                                   -- Completed at :- [ Thursday 12th November 2020 ]
 8. Make Extension for Other Platform as Well
-                                                  -- Incomplete
+                                                  -- Incomplete - Not part of JS Development
 
 ----------------------------------------------------------------------------------------------------
                                            Mobile App 
