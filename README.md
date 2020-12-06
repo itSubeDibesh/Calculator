@@ -1,4 +1,4 @@
-## <p align="center"> Calculator Web App 
+## <p align="center"> Calculator
 ##### <p align="right">Made with ❤️ By @[Dibesh Raj Subedi](https://github.com/itSubeDibesh)</p></p>
 
 <p align="center">
