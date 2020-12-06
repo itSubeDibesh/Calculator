@@ -1,0 +1,84 @@
+{
+	"name": "Calculator",
+	"productName": "Calculator",
+	"icon": "./Assets/Images/favicon.icns",
+	"version": "1.0.0",
+	"copyright": "Copyright © 2020 CodeMoker",
+	"description": "A Calculator Web App using Js by Dibesh Raj Subedi, A quest from noob to be a pro Js Developer.",
+	"main": "electron.js",
+	"scripts": {
+		"postinstall": "electron-builder install-app-deps",
+		"start": "electron-forge start",
+		"package": "electron-forge package",
+		"publish": "electron-forge publish",
+		"make": "electron-forge make --platform=darwin",
+		"make-mac": "electron-forge make --platform=darwin",
+		"make-linux": "electron-forge make --platform=linux",
+		"make-windows": "electron-forge make --platform=win32",
+		"pack": "electron-builder --dir",
+		"dist": "electron-builder"
+	},
+	"keywords": [],
+	"author": "Dibesh Raj Subedi",
+	"license": "MIT",
+	"build": {
+		"appId": "com.codemoker.quest.calculator",
+		"mac": {
+			"category": "calculator.app.category.utilities",
+			"icon": "./Assets/Images/favicon.icns"
+		},
+		"win": {
+			"icon": "./Assets/Images/favicon.ico"
+		},
+		"linux": {
+			"icon": "./Assets/Images/favicon-64.png"
+		}
+	},
+
+	"config": {
+		"forge": {
+			"make_targets": {
+				"win32": [ "squirrel" ],
+				"darwin": [ "zip", "dmg" ],
+				"linux": [ "deb", "rpm", "freebsd", "snap", "apk" ]
+			},
+			"packagerConfig": {
+				"icon": "./Assets/Images/favicon.icns"
+			},
+			"makers": [
+				{
+					"name": "@electron-forge/maker-squirrel",
+					"config": {
+						"name": "Calculator"
+					}
+				},
+				{
+					"name": "@electron-forge/maker-zip",
+					"platforms": [ "darwin" ]
+				},
+				{
+					"name": "@electron-forge/maker-deb",
+					"config": {
+						"icon": "./Assets/Images/favicon-64.png"
+					}
+				},
+				{
+					"name": "@electron-forge/maker-rpm",
+					"config": {}
+				}
+			]
+		}
+	},
+	"devDependencies": {
+		"@electron-forge/cli": "^6.0.0-beta.54",
+		"@electron-forge/maker-deb": "^6.0.0-beta.54",
+		"@electron-forge/maker-rpm": "^6.0.0-beta.54",
+		"@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+		"@electron-forge/maker-zip": "^6.0.0-beta.54",
+		"electron": "^11.0.1",
+		"electron-builder": "^22.9.1"
+	},
+	"dependencies": {
+		"electron-squirrel-startup": "^1.0.0"
+	}
+}
